@@ -1,0 +1,202 @@
+/* .welcome {
+  color: rgba(3, 3, 41, 0.938);
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 60px;
+}
+
+.create {
+  color: rgba(3, 3, 41, 0.938);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  letter-spacing: 1px;
+} */
+/* 
+@import "compass/css3";
+
+{body-bg: var(#c1bdba);
+$form-bg: #13232f;
+$white: #ffffff;
+
+$main: #1ab188;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: #a0b3b0;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+} */
+
+/* *,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+.background {
+  background-color: #c1bdba;
+}
+.main-container {
+  box-sizing: border-box;
+  padding-left: 50vh;
+  padding-top: 20vh;
+  text-align: center;
+  justify-content: center;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.Home {
+  justify-content: center;
+  background: ;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.main h2 {
+  text-align: center;
+  color: rgb(14, 15, 92);
+  font-weight: 300px;
+  margin: 0 0 40px;
+}
+
+.form {
+  justify-content: center;
+  text-align: center;
+  background: rgba(#13232f, 0.9);
+  padding: 80px;
+  max-width: 80%;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(#13232f, 0.3);
+}
+
+.wrap button {
+  text-decoration: none;
+  color: #1ab188;
+  transition: 0.5s ease;
+}
+
+.wrap button:hover {
+  color: darken(#1ab188, 5%);
+}
+
+form label {
+  position: absolute;
+  transform: translateY(6px);
+  left: 13px;
+  color: rgba(white, 0.5);
+  transition: all 0.25s ease;
+  pointer-events: none;
+  font-size: 22px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+label.highlight {
+  color: white;
+}
+
+input {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: white;
+  border-radius: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #1ab188;
+  color: white;
+  transition: all.5s ease;
+  -webkit-appearance: none;
+}
+
+.button:hover {
+  background: darken(#1ab188, 5%);
+} */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.Home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Add padding to containers */
+.main-container {
+  width: 2000px;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 5%);
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Full-width input fields */
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: rgba(#13232f, 0.9);
+  color: white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+
+/* Set a style for the submit/register button */
+.button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
