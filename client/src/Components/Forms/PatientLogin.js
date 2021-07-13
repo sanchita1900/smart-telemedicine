@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-// import Cookies from 'js-cookie';
-// import { signinApi } from '../../api';
+import Cookies from 'js-cookie';
+import { patientLoginApi } from '../../api';
 import { Link, Redirect,useHistory} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,21 +28,20 @@ const PatientLogin = () => {
       });
     } else {
       e.preventDefault();
-      history.push('/patdashboard');
-      //const data = await signinApi(signinEmail, signinPassword);
-    //   if (data.success === true) {
-    //     Cookies.set('token', data.token);
-    //     history.push('/dashboard');
-    //   }
-    //   if (data.success === false) {
-    //     toast.dark('Wrong Credentials');
-    //     setsigninEmail('');
-    //     setsigninPassword('');
-    //   }
+      const data = await patientLoginApi(loginEmail, loginPassword);
+     if (data.success === true) {
+        Cookies.set('token', data.token);
+        history.push('/patdashboard');
+       }
+       if (data.success === false) {
+        toast.dark('Wrong Credentials');
+         setloginEmail('');
+         setloginPassword('');
+       }
     }
   };
 
-  //if (Cookies.get('token')) return <Redirect to="/dashboard"></Redirect>;
+  if (Cookies.get('token')) return <Redirect to="/patdashboard"></Redirect>;
 
   return (
     <div className="signincontainer">

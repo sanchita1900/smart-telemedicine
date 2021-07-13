@@ -172,7 +172,7 @@ input[type="password"] {
   display: inline-block;
   border: none;
   background: rgba(#13232f, 0.9);
-  color: white;
+  color: black;
 }
 
 input[type="text"]:focus,

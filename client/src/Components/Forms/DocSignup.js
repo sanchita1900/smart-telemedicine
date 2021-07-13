@@ -3,6 +3,7 @@ import HomeNavbar from '../HomeNavbar/HomeNavbar';
 import { useHistory , Link} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import './Forms.css';
+import { doctorSignupApi } from '../../api/index';
 
 const DocSignup = () => {
     const [regName, setName] = useState(null);
@@ -39,13 +40,12 @@ const DocSignup = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        if (!regName || !regEmail || !regPassword || !regSpeciality || !regExperience || !regGender) {
+        if (!regName || !regEmail || !regPassword ) {
         toast.dark('Input Fields cannot be empty');
         history.push('/docsignup');
         } else {
-            // <Link to='/doclogin'></Link>
         history.push('/doclogin');
-        // await registerApi(regName, regEmail, regPassword);
+        await doctorSignupApi(regName, regEmail, regPassword);
         }
     };
     return (

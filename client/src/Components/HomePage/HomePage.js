@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './HomePage.css';
 import { Redirect } from 'react-router';
-import logo from './stethescope.png';
+import logo from './steth.png';
 import HomeNavbar from '../HomeNavbar/HomeNavbar'
 //import Cards from './Cards';
 

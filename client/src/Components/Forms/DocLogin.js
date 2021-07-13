@@ -1,15 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, Redirect} from 'react-router-dom';
+import { useHistory, Link, Redirect} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import HomeNavbar from '../HomeNavbar/HomeNavbar';
-// import Cookies from 'js-cookie';
-// import { signinApi } from '../../api';
+import Cookies from 'js-cookie';
+import { doctorLoginApi } from '../../api/index';
+
 
 const DocLogin = () => {
   const [loginEmail, setloginEmail] = useState('');
   const [loginPassword, setloginPassword] = useState('');
+  const history = useHistory();
 
   const updateEmail = (e) => {
     setloginEmail(e.target.value);
@@ -27,21 +29,20 @@ const DocLogin = () => {
       });
     } else {
       e.preventDefault();
-      <Link to= '/docdashboard'></Link>
-      //const data = await signinApi(signinEmail, signinPassword);
-    //   if (data.success === true) {
-    //     Cookies.set('token', data.token);
-    //     history.push('/dashboard');
-    //   }
-    //   if (data.success === false) {
-    //     toast.dark('Wrong Credentials');
-    //     setsigninEmail('');
-    //     setsigninPassword('');
-    //   }
+      const data = await doctorLoginApi(loginEmail, loginPassword);
+      if (data.success === true) {
+         Cookies.set('token', data.token);
+         history.push('/docdashboard');
+       }
+       if (data.success === false) {
+         toast.dark('Wrong Credentials');
+         setloginEmail('');
+         setloginPassword('');
+       }
     }
   };
 
-  //if (Cookies.get('token')) return <Redirect to="/dashboard"></Redirect>;
+  if (Cookies.get('token')) return <Redirect to="/docdashboard"></Redirect>;
 
   return (
     <div className="signincontainer">

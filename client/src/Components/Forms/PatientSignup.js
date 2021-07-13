@@ -3,15 +3,16 @@ import HomeNavbar from '../HomeNavbar/HomeNavbar';
 import { useHistory , Link} from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import './Forms.css';
+import { patientSignupApi } from '../../api/index';
 
-const DocSignup = () => {
+const PatientSignup = () => {
     const [regName, setName] = useState(null);
     const [regEmail, setRegEmail] = useState(null);
     const [regPassword, setRegPassword] = useState(null);
     const [regAge, setRegAge] = useState(null);
     const [regWeight, setRegWeight] = useState(null);
     const [regGender, setRegGender] = useState(null);
-    // const history = useHistory();
+    const history = useHistory();
 
     const updateName = (e) => {
         setName(e.target.value);
@@ -39,14 +40,12 @@ const DocSignup = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        if (!regName || !regEmail || !regPassword || !regAge || !regWeight || !regGender) {
+        if (!regName || !regEmail || !regPassword ) {
         toast.dark('Input Fields cannot be empty');
-        <Link to='/patientsignup'></Link>
-        // history.push('/docsignup');
+        history.push('/patientsignup');
         } else {
-            <Link to='/patientlogin'></Link>
-        // history.push('/');
-        // await registerApi(regName, regEmail, regPassword);
+         history.push('/patientlogin');
+        await patientSignupApi(regName, regEmail, regPassword);
         }
     };
     return (
@@ -128,4 +127,4 @@ const DocSignup = () => {
     </>
     )
   }
-  export default DocSignup;
+  export default PatientSignup;
