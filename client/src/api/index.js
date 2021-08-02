@@ -137,6 +137,12 @@ export const cancelRequestApi = async(id) => {
 
 export const checkInvitationApi = async() => {
   const data = await fetch(`http://localhost:5000/doctor/checkInvitation`,{
-    
-  })
+    method :'get',
+    headers: {
+      Authorization: `Bearer ${Cookies.get('token')}`,
+      'Content-Type': 'application/json',
+    }
+  });
+  console.log(data);
+  return await data.json();
 }

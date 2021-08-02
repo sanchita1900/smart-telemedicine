@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const patient = require('./patientAuth');
 
 const docSchema = new Schema({
     email:{
@@ -48,9 +49,11 @@ const docSchema = new Schema({
     about: {
         type: String
     },
-    invitation: {
-        type: Array
-    },
+    invitation: [{
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: patient
+    }]
+    ,
     appointment:{
         type: Array
     }

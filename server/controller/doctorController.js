@@ -39,19 +39,20 @@ exports.saveProfile = async (req,res,next) => {
     }
 }
 
-exports.checkInvitation = async() => {
-    const id = req.userId;
+exports.checkInvitation = async(req,res,next) => {
+    const id = req.decodedToken.userId;
     try{
-        const doctor = await Doctor.findById(id);
+        const doctor = await Doctor.findById(id).populate("invitation");
+        console.log(doctor);
         let inviteArr = doctor.invitation;
 
-        let arr = [];
-        for(let i=0;i<inviteArr.length;i++){
-            const patient  = await Patient.findById(inviteArr[i]);
-            arr.push(patient);
-        }
-        console.log(arr);
-        res.status(200).json({message: "success", arr: arr});
+        //let arr = [];
+        // for(let i=0;i<inviteArr.length;i++){
+        //     const patient  = await Patient.findById(inviteArr[i]);
+        //     arr.push(patient);
+        // }
+        // console.log(arr);
+        res.status(200).json({message: "success", arr: inviteArr});
     }catch(err){
         console.log(err);
         next(err);
