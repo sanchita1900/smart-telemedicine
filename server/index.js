@@ -5,7 +5,8 @@ require('dotenv').config();
 
 const authRouter = require('./routes/authRoutes');
 const patientRouter = require('./routes/patientRoutes');
-const doctorRouter = require('./routes/doctorRoutes')
+const doctorRouter = require('./routes/doctorRoutes');
+
 
 const app = express();
 

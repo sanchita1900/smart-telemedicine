@@ -101,3 +101,42 @@ export const doctorProfileUpdateApi = async(formData) => {
   });
   return await data.json();
 };
+
+export const getDoctorsApi = async() => {
+  const doctor = await fetch('http://localhost:5000/patient/getDoctors',{
+    method: 'get',
+    headers: {
+      Authorization: `Bearer ${Cookies.get('token')}`,
+      'Content-Type':'application/json',
+    }
+  });
+  return await doctor.json();
+}
+
+export const sendRequestApi = async(id) => {
+  const data = await fetch(`http://localhost:5000/patient/sendRequest/${id}`, {
+      method: 'post',
+      headers: {
+        Authorization: `Bearer ${Cookies.get('token')}`,
+        'Content-Type': 'application/json',
+      }
+  });
+  return await data.json();
+}
+
+export const cancelRequestApi = async(id) => {
+  const data = await fetch(`http://localhost:5000/patient/cancelRequest/${id}`, {
+      method: 'post',
+      headers: {
+        Authorization: `Bearer ${Cookies.get('token')}`,
+        'Content-Type': 'application/json',
+      }
+  });
+  return await data.json();
+}
+
+export const checkInvitationApi = async() => {
+  const data = await fetch(`http://localhost:5000/doctor/checkInvitation`,{
+    
+  })
+}

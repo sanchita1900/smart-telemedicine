@@ -148,17 +148,17 @@ input {
 .Home {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
 }
 
 /* Add padding to containers */
 .main-container {
-  width: 2000px;
+  width: 100%;
   position: relative;
   top: 10%;
   left: 50%;
   transform: translate(-50%, 5%);
-  padding: 50px;
+  padding: 30px;
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -167,7 +167,7 @@ input[type="email"],
 input[type="text"],
 input[type="password"] {
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
@@ -187,7 +187,7 @@ input[type="password"]:focus {
 .button {
   background-color: #04aa6d;
   color: white;
-  padding: 16px 20px;
+  padding: 10px 25px;
   margin: 8px 0;
   border: none;
   cursor: pointer;

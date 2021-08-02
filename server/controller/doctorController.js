@@ -38,3 +38,22 @@ exports.saveProfile = async (req,res,next) => {
         next(err);
     }
 }
+
+exports.checkInvitation = async() => {
+    const id = req.userId;
+    try{
+        const doctor = await Doctor.findById(id);
+        let inviteArr = doctor.invitation;
+
+        let arr = [];
+        for(let i=0;i<inviteArr.length;i++){
+            const patient  = await Patient.findById(inviteArr[i]);
+            arr.push(patient);
+        }
+        console.log(arr);
+        res.status(200).json({message: "success", arr: arr});
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}

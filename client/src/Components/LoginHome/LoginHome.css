@@ -14,13 +14,13 @@ Menu {
 }
 
 .Menu .Home img {
-  padding-top: 0%;
-  width: 170vh;
-  height: 100vh;
+  padding-top: 0px;
+  width: 190vh;
+  height: 90vh;
 }
 
 .Home button {
-  font-size: 5rem;
+  font-size: 2rem;
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -28,7 +28,7 @@ Menu {
 
 .Menu .Home .btn-1 {
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 1rem;
   position: absolute;
   top: 10%;
   left: 70%;
@@ -37,7 +37,7 @@ Menu {
   background-color: rgb(7, 48, 66);
   color: white;
   width: 30%;
-  padding: 30px;
+  padding: 7px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -49,16 +49,16 @@ Menu {
 
 .Menu .Home .btn-2 {
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 1rem;
   position: absolute;
-  top: 15%;
+  top: 18%;
   left: 70%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: rgb(7, 48, 66);
   color: white;
   width: 30%;
-  padding: 30px;
+  padding: 7px;
   border: none;
   border-radius: 20px;
   cursor: pointer;

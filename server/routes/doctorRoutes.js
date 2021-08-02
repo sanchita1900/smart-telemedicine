@@ -6,5 +6,6 @@ const doctorController = require('../controller/doctorController');
 
 router.get("/profile", auth, doctorController.getProfile);
 router.post("/profile",auth, doctorController.saveProfile);
+router.get("/checkInvitation",auth, doctorController.checkInvitation);
 
 module.exports = router;

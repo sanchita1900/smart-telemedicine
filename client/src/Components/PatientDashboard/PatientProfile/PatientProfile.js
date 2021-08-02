@@ -35,6 +35,7 @@ const PatientProfile = () => {
 
     const profile = async () => {
         const data = (await patientProfileApi()).profile;
+        console.log(data);
         setFormData({...data});
     }
 

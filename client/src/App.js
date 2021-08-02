@@ -10,13 +10,17 @@ import DocLogin from './Components/Forms/DocLogin';
 import PatientLanding from './Components/PatientDashboard/PatientLanding/PatientLanding';
 import PatientProfile from './Components/PatientDashboard/PatientProfile/PatientProfile';
 import DoctorLanding from './Components/DoctorDashboard/DoctorLanding/DoctorLanding';
-import DoctorProfile from './Components/DoctorDashboard/DoctorProfile/DoctorProfile'
+import DoctorProfile from './Components/DoctorDashboard/DoctorProfile/DoctorProfile';
+import AppointmentRequest from './Components/DoctorDashboard/AppointmentRequest/AppointmentRequest'
+import SearchDoctors from './Components/PatientDashboard/SearchDoctors/SearchDoctors';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 
 
 const App = () =>  {
     return (
+      <div>
       <Router>
         <Switch>
         <Route exact path="/" >
@@ -64,8 +68,19 @@ const App = () =>  {
           exact>
           <DoctorProfile />
           </Route>
+          <Route
+          path="/searchdoctors"
+          exact>
+          <SearchDoctors />
+          </Route>
+          <Route
+          path="/requests"
+          exact>
+          <AppointmentRequest />
+          </Route>
         </Switch>
       </Router>
+      </div>
     )
   }
 

@@ -1,7 +1,7 @@
 .Navbar {
   background-color: rgba(3, 3, 41, 0.938);
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   font-family: "Acme", sans-serif;
   display: flex;
   justify-content: flex-end;
@@ -14,7 +14,7 @@
 .navItems {
   display: flex;
   color: white;
-  font-size: 5rem;
+  font-size: 1.5rem;
   font-weight: 200;
   text-decoration: none;
   background: transparent;

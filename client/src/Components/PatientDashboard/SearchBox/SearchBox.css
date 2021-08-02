@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(240, 243, 247);
+  width: 50%;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid #f8eeee;
+  box-shadow: 10px 10px 9px -9px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+}
