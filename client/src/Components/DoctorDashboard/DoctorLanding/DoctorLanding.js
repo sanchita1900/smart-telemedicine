@@ -1,11 +1,16 @@
 import React from 'react';
-import DoctorNavbar from '../DoctorNavbar/DoctorNavbar'
+import DoctorNavbar from '../DoctorNavbar/DoctorNavbar';
 
 const DoctorLanding = () => {
+
+
     return(
         <div>
             <DoctorNavbar />
-            <h1>Hellooo</h1>
+            <h1>Patients under Monitor</h1>
+            <div className="Card">
+
+            </div>
         </div>
         
     )

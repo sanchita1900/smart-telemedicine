@@ -55,7 +55,7 @@ const handlePatientLogin = async(req,res) => {
         if (user) {
             const cmp = await bcrypt.compare(req.body.password, user.password);
             if (cmp) {
-              const token = jwt.sign({ userId: user._id },'test');
+              const token = jwt.sign({ userId: user._id,type:'patient' },'test');
               delete user.password;
               return res.json({
                 success: true,
@@ -81,7 +81,7 @@ const handleDocLogin = async (req,res) => {
         if (user) {
             const cmp = await bcrypt.compare(req.body.password, user.password);
             if (cmp) {
-              const token = jwt.sign({ userId: user._id },'test');
+              const token = jwt.sign({ userId: user._id,type:'doctor' },'test');
               delete user.password;
               return res.json({
                 success: true,

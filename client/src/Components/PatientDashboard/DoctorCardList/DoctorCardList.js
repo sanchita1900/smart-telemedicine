@@ -10,7 +10,7 @@ import './DoctorCardList.css';
         <>
         <div className="cardList-container">   
         {doctors.map(doctor => (
-            <DoctorCard id={doctor._id} name={doctor.name} email={doctor.email} specialization={doctor.specialization} invitation = {doctor.invitation}/>
+            <DoctorCard id={doctor._id} name={doctor.name} email={doctor.email} specialization={doctor.specialization} invitation = {doctor.invitation} appointment={doctor.appointment}/>
         ))
         }
         </div>

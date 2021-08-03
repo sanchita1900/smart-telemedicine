@@ -146,3 +146,36 @@ export const checkInvitationApi = async() => {
   console.log(data);
   return await data.json();
 }
+
+export const confirmInvitationApi = async(id) => {
+  const data = await fetch(`http://localhost:5000/doctor/confirmInvitation/${id}`,{
+    method :'post',
+    headers : {
+      Authorization:`Bearer ${Cookies.get('token')}`,
+      'Content-Type': 'application/json',
+    }
+  })
+  return await data.json();
+}
+
+export const getPatientsApi = async() => {
+  const data = await fetch('http://localhost:5000/doctor/getPatients',{
+    method: 'get',
+    headers: {
+      Authorization:`Bearer ${Cookies.get('token')}`,
+      'Content-Type': 'application/json',
+    }
+  })
+  return await data.json();
+}
+
+export const getAppointedDocsApi = async() => {
+  const data = await fetch('http://localhost:5000/patient/getAppointedDoctors',{
+    method: 'get',
+    headers: {
+      Authorization: `Bearer ${Cookies.get('token')}`,
+      'Content-Type': 'application/json',
+    }
+  })
+  return await data.json();
+}

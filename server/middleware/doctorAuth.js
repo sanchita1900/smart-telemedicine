@@ -6,6 +6,9 @@ module.exports = (req,res,next) => {
         if (token) {
         const decodedToken = jwt.verify(token, 'test');
         console.log(decodedToken);
+        if(decodedToken.type !== 'doctor'){
+            return res.status(403).json({message:" unauthorized, should be doctor"})
+        }
         req.decodedToken = decodedToken;
         next();
         }

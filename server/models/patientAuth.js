@@ -46,7 +46,11 @@ const patientSchema = new Schema({
     },
     request:{
         type: Array
+    },
+    appointedDocs:{
+        type: Array
     }
+   
 },{timestamps: true});
 
 module.exports = mongoose.model('patient', patientSchema);

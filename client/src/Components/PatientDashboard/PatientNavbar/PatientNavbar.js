@@ -13,6 +13,7 @@ const PateintNavbar = ()=> {
             <Link to="/patprofile" className="navItems" >Profile</Link>
             <Link to="/patdashboard" className="navItems">Dashboard</Link>
             <Link to="/searchdoctors" className="navItems">Search Doctors</Link>
+            <Link to="/prescription" className="navItems">Prescriptions</Link>
             <Link to='/login' onClick={signout} className="navItems">Signout </Link>
         </nav>
     );

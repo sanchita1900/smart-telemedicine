@@ -13,6 +13,7 @@ const DoctorNavbar = ()=> {
             <Link to="/docprofile" className="navItems" >Profile</Link>
             <Link to="/docdashboard" className="navItems">Dashboard</Link>
             <Link to="/requests" className="navItems">Appointment Request</Link>
+            <Link to="/prescribe" className="navItems">Prescribe</Link>
             <Link to='/login' onClick={signout} className="navItems">Signout </Link>
         </nav>
     );

@@ -63,22 +63,18 @@ exports.sendRequest = async(req,res,next) => {
         const doctor = await Doctor.findById(docId);
         console.log(doctor)
          const patient = await Patient.findById(patientId);
-         if(patient.request.find(x => x === docId)){
-            res.status(400).json({ message:"request already sent"})
+         if(patient.request.find(x => x === docId)|| doctor.invitation.find(x => x===patientId)){
+            return res.status(400).json({ message:"request already sent"})
          }
          else{
             patient.request.push(docId);
          await patient.save();
-         res.status(200).json({ message: "success" });
+         doctor.invitation.push(patientId);
+        await doctor.save();
+         return res.status(200).json({ message: "success" });
          }
         
-        if(doctor.invitation.find(x => x===patientId)){
-            res.status(400).json({ message:"request already sent"})
-        }
-        else
-        {doctor.invitation.push(patientId);
-        await doctor.save();
-        res.status(200).json({ message: "success",doctor });}
+        
     }catch(err){
         console.log(err);
         next(err);
@@ -92,22 +88,41 @@ exports.cancelRequest = async(req,res,next) => {
         const patientId = req.decodedToken.userId;
         const doctor = await Doctor.findById(docId);
          const patient = await Patient.findById(patientId);
-         if(patient.request.find(x => x === docId)){
+         console.log(patient);
+         if((patient.request.find(x => x === docId)&&doctor.invitation.find(x => x==patientId) )||(patient.appointedDocs.find(x => x===docId) && doctor.appointment.find(x => x ===patientId) )){
             patient.request.pop(docId);
+            patient.appointedDocs.pop(docId);
             await patient.save();
-            res.status(200).json({ message: "success" });
+            doctor.invitation.pop(patientId);
+            doctor.appointment.pop(patientId);
+            await doctor.save();
+            console.log(patient.request);
+            return res.status(200).json({ message: "success" });
          }
          else{
-            res.status(400).json({message: "doctor not requested already"});
+            return res.status(400).json({message: "doctor not requested already"});
          }
         
-        if(doctor.invitation.find(x => x===patientId)){
-            doctor.invitation.pop(patientId);
-            await doctor.save();
-            res.status(200).json({ message: "success" });
+
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
+
+exports.getAppointedDoctors = async(req,res,next) => {
+    try{
+        const patId = req.decodedToken.userId;
+        const arr = [];
+        const patient = await Patient.findById(patId);
+        const doctorsArr = patient.appointedDocs;
+        for(let i=0;i<doctorsArr.length;i++){
+            const doctor = await Doctor.findById(doctorsArr[i]);
+            arr.push(doctor);
         }
-        else
-        {res.status(400).json({ message:"no request from patient"})}
+        console.log(arr);
+        res.status(200).json({message: "success", arr: arr});
+
     }catch(err){
         console.log(err);
         next(err);

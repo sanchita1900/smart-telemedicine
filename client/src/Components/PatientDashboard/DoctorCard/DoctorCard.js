@@ -1,6 +1,6 @@
 import React , {useEffect, useState} from 'react';
 import Card from 'react-bootstrap/Card';
-import { patientProfileApi, sendRequestApi,cancelRequestApi } from '../../../api';
+import { patientProfileApi, sendRequestApi,cancelRequestApi, doctorProfileApi } from '../../../api';
 import DocImage from './doccard.png';
 import './DoctorCard.css';
 
@@ -10,14 +10,17 @@ const DoctorCard = (props) => {
 
   useEffect(() => {
      handleCheck();
-   })
+   },[])
   
    const handleCheck = async() =>{
     const pdata = await patientProfileApi();
     // console.log(pdata.profile._id);
     // console.log(props.invitation)
     // console.log(props.invitation.find(x => x === pdata.profile._id ));
-    if(props.invitation.find(x => x === pdata.profile._id )){
+    console.log(props);
+    if(props.invitation.find(x => x === pdata.profile._id ) ||
+    props.appointment.find(x => x===pdata.profile._id))
+    {
       setCheck(true);
       console.log("hello");
     }
@@ -50,10 +53,10 @@ const DoctorCard = (props) => {
               {props.specialization}
             </div>
           </div>
-          <button className="btn1" onClick={handleSubmit}>
+          <button className="btn1" onClick={handleSubmit} disabled={check}>
            {check ? "Requested":"Request for Appointment" }
           </button>
-          <button className="btn2" onClick={handleCancel}>
+          <button className="btn2" onClick={handleCancel} disabled={!check}>
             Cancel
           </button>
           {/* <ToastContainer autoClose={1000} /> */}

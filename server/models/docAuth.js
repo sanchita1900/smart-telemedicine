@@ -53,6 +53,9 @@ const docSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: patient
     }]
+    // invitation:{
+    //     type:Array
+    // }
     ,
     appointment:{
         type: Array

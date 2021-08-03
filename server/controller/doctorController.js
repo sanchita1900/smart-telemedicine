@@ -43,16 +43,58 @@ exports.checkInvitation = async(req,res,next) => {
     const id = req.decodedToken.userId;
     try{
         const doctor = await Doctor.findById(id).populate("invitation");
-        console.log(doctor);
         let inviteArr = doctor.invitation;
 
-        //let arr = [];
-        // for(let i=0;i<inviteArr.length;i++){
-        //     const patient  = await Patient.findById(inviteArr[i]);
-        //     arr.push(patient);
-        // }
-        // console.log(arr);
-        res.status(200).json({message: "success", arr: inviteArr});
+        let arr = [];
+        for(let i=0;i<inviteArr.length;i++){
+            const patient  = await Patient.findById(inviteArr[i]);
+            arr.push(patient);
+        }
+        console.log(arr);
+        res.status(200).json({message: "success", arr: arr});
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
+
+exports.confirmInvitation = async(req,res,next) => {
+    try{
+        const docId = req.decodedToken.userId;
+        const patId = req.params.id;
+        console.log(req.params.id);
+        const doctor = await Doctor.findById(docId);
+        const patient = await Patient.findById(patId);
+        if(doctor.appointment.find(x => x ===patId) ||patient.appointedDocs.find(x => x===docId)){
+            return res.status(400).json({message:"already appointed"})
+        }
+        else{
+            doctor.appointment.push(patId);
+            doctor.invitation.pop(patId);
+            await doctor.save();
+            patient.appointedDocs.push(docId);
+            await patient.save();
+            console.log(patient);
+            return res.status(200).json({message:"success"});
+        }
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
+
+exports.getPatients = async(req,res,next) => {
+    try{
+        const docId = req.decodedToken.userId;
+        const arr = [];
+        const doctor = await Doctor.findById(docId);
+        const patientsArr = doctor.appointment;
+        for(let i=0;i<patientsArr.length;i++){
+            const patient  = await Patient.findById(patientsArr[i]);
+            arr.push(patient);
+        }
+        console.log(arr);
+        res.status(200).json({message: "success", arr: arr});
     }catch(err){
         console.log(err);
         next(err);

@@ -13,6 +13,8 @@ import DoctorLanding from './Components/DoctorDashboard/DoctorLanding/DoctorLand
 import DoctorProfile from './Components/DoctorDashboard/DoctorProfile/DoctorProfile';
 import AppointmentRequest from './Components/DoctorDashboard/AppointmentRequest/AppointmentRequest'
 import SearchDoctors from './Components/PatientDashboard/SearchDoctors/SearchDoctors';
+import PrescriptionPage from './Components/PatientDashboard/PresciptionPage/PresciptionPage';
+import PrescriptionMain from './Components/DoctorDashboard/Prescription/PrescriptionMain';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -77,6 +79,16 @@ const App = () =>  {
           path="/requests"
           exact>
           <AppointmentRequest />
+          </Route>
+          <Route
+          path="/prescription"
+          exact>
+          <PrescriptionPage />
+          </Route>
+          <Route
+          path="/prescribe"
+          exact>
+          <PrescriptionMain />
           </Route>
         </Switch>
       </Router>
