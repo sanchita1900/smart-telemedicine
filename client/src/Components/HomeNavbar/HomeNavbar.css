@@ -5,10 +5,16 @@
   font-family: "Acme", sans-serif;
   display: flex;
   justify-content: flex-end;
-  height: 10vh;
+  height: 13vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   align-items: center;
   /* position: absolute; */
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 150px;
 }
 
 .navItems {

@@ -3,6 +3,7 @@ import PateintNavbar from '../PatientNavbar/PatientNavbar';
 import { patientProfileApi } from '../../../api';
 import { patientProfileUpdateApi } from '../../../api';
 import { useHistory } from 'react-router-dom';
+import './PatientProfile.css';
 // import { useParams } from 'react-router-dom';
 
 
@@ -48,6 +49,8 @@ const PatientProfile = () => {
     return(
         <>
         <PateintNavbar />
+        <div className="main">
+        <div className="outer-box">
         <div>
             <h1>YOUR PROFILE</h1>
         </div>
@@ -55,7 +58,7 @@ const PatientProfile = () => {
             <label>Name</label>
             <input
                 className="input"
-                type="text"
+                type="string"
                 name="name"
                 value={formData.name}
                 disabled={true}
@@ -63,7 +66,7 @@ const PatientProfile = () => {
             <label>Email</label>
             <input
                 className="input"
-                type="text"
+                type="string"
                 name="email"
                 value={formData.email}
                 disabled={true}
@@ -71,7 +74,7 @@ const PatientProfile = () => {
             <label>State</label>
             <input
                 className="input"
-                type="text"
+                type="string"
                 name="state"
                 value={formData.state}
                 placeholder="State"
@@ -80,7 +83,7 @@ const PatientProfile = () => {
             <label>City</label>
             <input
                 className="input"
-                type="text"
+                type="string"
                 name="city"
                 value={formData.city}
                 placeholder="City"
@@ -89,7 +92,7 @@ const PatientProfile = () => {
             <label>Gender</label>
             <input
                 className="input"
-                type="text"
+                type="string"
                 name="gender"
                 value={formData.gender}
                 placeholder="Gender"
@@ -163,7 +166,8 @@ const PatientProfile = () => {
             Save
             </button>
         </form>
-        
+        </div>
+        </div>
         </>
     )
 }

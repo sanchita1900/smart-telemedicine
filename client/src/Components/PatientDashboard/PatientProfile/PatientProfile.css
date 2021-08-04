@@ -1,0 +1,37 @@
+.main {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background: #d0cdf0;
+}
+
+.outer-box {
+  align-items: center;
+  background: #675ddd;
+  color: rgb(10, 8, 8);
+  display: grid;
+  font-size: 14px;
+  font-weight: 400;
+  height: 130vh;
+  justify-items: center;
+  width: 800px;
+  padding-left: 2rem;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid;
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+  width: 200px;
+}
