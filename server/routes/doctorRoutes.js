@@ -9,5 +9,6 @@ router.post("/profile",auth, doctorController.saveProfile);
 router.get("/checkInvitation",auth, doctorController.checkInvitation);
 router.post("/confirmInvitation/:id",auth,doctorController.confirmInvitation);
 router.get("/getPatients",auth,doctorController.getPatients);
+router.post("/sendPrescription/:id",auth,doctorController.sendPrescription);
 
 module.exports = router;

@@ -53,13 +53,14 @@ const docSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: patient
     }]
-    // invitation:{
-    //     type:Array
-    // }
     ,
     appointment:{
         type: Array
-    }
+    },
+    prescription : [{
+        patId: mongoose.Schema.Types.ObjectId,
+        messages : String,
+    }],
 }, {timestamps: true});
 
 module.exports = mongoose.model('doctor', docSchema);

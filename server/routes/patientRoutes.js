@@ -10,4 +10,6 @@ router.get("/getDoctors",auth, patientController.getDoctors);
 router.post("/sendRequest/:id",auth,patientController.sendRequest);
 router.post("/cancelRequest/:id",auth,patientController.cancelRequest);
 router.get("/getAppointedDoctors",auth,patientController.getAppointedDoctors);
+router.post("/sendProblem/:id",auth,patientController.sendProblem);
+
 module.exports = router;

@@ -6,6 +6,7 @@ require('dotenv').config();
 const authRouter = require('./routes/authRoutes');
 const patientRouter = require('./routes/patientRoutes');
 const doctorRouter = require('./routes/doctorRoutes');
+const messageRouter = require('./routes/messageRoute');
 
 
 const app = express();
@@ -17,6 +18,7 @@ const start = async () => {
   app.use('/', authRouter);
   app.use('/patient', patientRouter);
   app.use('/doctor',doctorRouter);
+  app.use('/message',messageRouter);
    app.get('/', (req, res) => {
      res.send('Hello World');
    });
