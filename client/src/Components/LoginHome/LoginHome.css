@@ -19,13 +19,13 @@ Menu {
   height: 90vh;
 }
 
-.Home button {
+/* .Home button {
   font-size: 2rem;
   color: white;
   border-radius: 5px;
   text-decoration: none;
-}
-
+} */
+/* 
 .Menu .Home .btn-1 {
   text-decoration: none;
   font-size: 1rem;
@@ -41,13 +41,13 @@ Menu {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-}
+} */
 
 .Home .btn-1:hover {
   background-color: rgba(94, 157, 161, 0.938);
 }
 
-.Menu .Home .btn-2 {
+/* .Menu .Home .btn-2 {
   text-decoration: none;
   font-size: 1rem;
   position: absolute;
@@ -62,8 +62,24 @@ Menu {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-}
+} */
 
 .Home .btn-2:hover {
   background-color: rgba(94, 157, 161, 0.938);
+}
+.bgImage{
+  width: 90vw;
+  height: 80vh;
+}
+.pageFile{
+  overflow-y: hidden;
+  max-height: 100vh;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+.pTag{
+  margin-top: -0.7rem;
 }
