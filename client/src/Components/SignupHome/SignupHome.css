@@ -9,18 +9,12 @@
 
 .Home {
   position: absolute;
-  width: auto;
   text-align: center;
-}
-
-.Menu .Home img {
-  /* padding-top: 0%; */
-  width: 170vh;
-  height: 100vh;
+  display: flex;
 }
 
 .Home button {
-  font-size: 5rem;
+  /* font-size: 5rem; */
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -28,15 +22,16 @@
 
 .Menu .Home .btn-1 {
   text-decoration: none;
-  font-size: 4rem;
+  /* font-size: 4rem; */
   position: absolute;
-  top: 10%;
+  top: 9%;
   left: 70%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: rgb(7, 48, 66);
   color: white;
-  width: 30%;
+  width: 20rem;
+  height: 3rem;
   padding: 30px;
   border: none;
   border-radius: 20px;
@@ -49,15 +44,16 @@
 
 .Menu .Home .btn-2 {
   text-decoration: none;
-  font-size: 4rem;
+  /* font-size: 4rem; */
   position: absolute;
-  top: 15%;
+  top: 19%;
   left: 70%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: rgb(7, 48, 66);
   color: white;
-  width: 30%;
+  width: 20rem;
+  height: 3rem;
   padding: 30px;
   border: none;
   border-radius: 20px;
@@ -67,3 +63,19 @@
 .Home .btn-2:hover {
   background-color: rgba(94, 157, 161, 0.938);
 }
+.bgImage{
+  width: 90vw;
+  height: 80vh;
+}
+.pageFile{
+  overflow-y: hidden;
+  max-height: 100vh;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+.pTag{
+  margin-top: -0.7rem;
+}
+

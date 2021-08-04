@@ -44,21 +44,23 @@
   color: rgba(10, 5, 6, 0.938);
 }
 .Lines button {
+  color: white;
   font-size: 1rem;
   border: 1px solid black;
   border-radius: 20px;
   width: 40%;
   font-weight: 200;
-  background: transparent;
+  background-color: #073042;
   transition: 0.5s;
   transform: translateY(30px);
   padding: 10px;
   letter-spacing: 2px;
+  user-select: none;
 }
 .Lines button:hover {
   border: 1px solid rgb(28, 11, 88);
   color: white;
-  background-color: rgba(3, 3, 41, 0.938);
+  background-color: rgba(94, 157, 161, 0.938);
   cursor: pointer;
 }
 .Doc {
