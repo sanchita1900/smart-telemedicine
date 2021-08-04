@@ -49,9 +49,9 @@ const DoctorCard = (props) => {
             </div>
             <p className="email">{props.email}</p>
             <div className="speciality">
-            <div >
+            <p >
               {props.specialization}
-            </div>
+            </p>
           </div>
           <button className="btn1" onClick={handleSubmit} disabled={check}>
            {check ? "Requested":"Request for Appointment" }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { confirmInvitationApi } from '../../../api';
-
+import "./PatientCard.css"
 const PatientCard = (props) => {
 
     
@@ -11,13 +11,29 @@ const PatientCard = (props) => {
 
     return(
         <>
-            <div className="Card">
-                Hi I am {props.name}, email id is {props.email}. 
-                I am sufferring from {props.disease}. Kindly accept my appointment request.
+        <div className="mainPatientCardContainer">
+            <div className="imgContainer">
+        <img src="https://img.icons8.com/ios-filled/250/000000/hand-with-a-pill.png" height="150px" width="180px"/>
+        </div>
+            <div className="PatientCard">
+
+
+            <div className="request">REQUEST</div>
+               <p> Name:<span className="Patientname">{props.name}</span></p> 
+               <br/>
+               <p> Email Id: <span>{props.email}</span></p>
+               <br/>
+                <p>Suffering From:<span className="PatientDisease">{props.disease}</span></p> 
+                <br/>
+
+               <div className="acceptButton">
+              
                 <button onClick={handleSubmit}>
                     Accept
                 </button>
-            </div>
+                </div>
+                </div>
+                </div>
         </>
     )
 }

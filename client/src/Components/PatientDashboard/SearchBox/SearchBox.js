@@ -14,15 +14,16 @@ const SearchBox = ({handleChange}) => {
             onChange={handleChange}
             
         />
-        <div className="dropdown">
+        {/* <div className="dropdown">
                 <DropdownButton id="dropdown-button" title="All">
-                    {/* <Dropdown.Item href="#/action-1">Gastrologist</Dropdown.Item>
+                    <Dropdown.Item href="#/action-1">Gastrologist</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Neurologist</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Medicine Spec.</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Cardiologist</Dropdown.Item> */}
+                    <Dropdown.Item href="#/action-1">Cardiologist</Dropdown.Item>
                 </DropdownButton>
-            </div>
+            </div> */}
         </div>
+        
         </>
     )
 }
