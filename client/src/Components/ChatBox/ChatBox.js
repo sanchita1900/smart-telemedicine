@@ -16,7 +16,7 @@ const ChatBox = () => {
   }, []);
 
   useEffect(() => {
-    console.log("hello", message);
+    console.log(message);
   }, [message]);
   return (
     <>

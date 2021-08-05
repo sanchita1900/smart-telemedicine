@@ -12,7 +12,7 @@
 
 .message span {
   padding: 15px;
-  background: red;
+  background: rgb(160, 32, 32);
   border-radius: 10px;
   color: white;
 }
@@ -22,5 +22,13 @@
 }
 
 .message.doctor span {
-  background: blue;
+  background: rgb(81, 81, 216);
 }
+
+/* .message.patient {
+  justify-content: flex-end;
+}
+
+.message.patient span {
+  background: rgb(81, 81, 216);
+} */

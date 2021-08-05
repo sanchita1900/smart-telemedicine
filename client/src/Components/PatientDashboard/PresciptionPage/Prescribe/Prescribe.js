@@ -21,6 +21,7 @@ const Prescribe = () => {
   const handleSend = async () => {
     await sendProblemApi(id, input);
     setInput(" ");
+    window.location.reload();
   };
 
   const handleChange = (e) => {
@@ -46,7 +47,7 @@ const Prescribe = () => {
         onChange={handleChange}
         value={input}
       />
-      <button onClick={handleSend}>Send</button>
+      <button onClick={handleSend}>Send Problem</button>
     </>
   );
 };

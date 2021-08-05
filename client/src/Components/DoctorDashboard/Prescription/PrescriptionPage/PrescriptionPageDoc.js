@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DoctorNavbar from "../../DoctorNavbar/DoctorNavbar";
 import { listMessageApi, sendPrescriptionApi } from "../../../../api";
+import ChatBox from "../../../ChatBox/ChatBox";
 
 const PrescriptionPageDoc = () => {
   const [message, setMessages] = useState([]);
@@ -20,6 +21,7 @@ const PrescriptionPageDoc = () => {
   const handleSend = async () => {
     await sendPrescriptionApi(id, input);
     setInput(" ");
+    window.location.reload();
   };
 
   const handleChange = (e) => {
@@ -29,7 +31,8 @@ const PrescriptionPageDoc = () => {
   return (
     <>
       <DoctorNavbar />
-      {message.length
+      <ChatBox />
+      {/* {message.length
         ? message.map((msg, i) => {
             return (
               <div key={i}>
@@ -37,14 +40,14 @@ const PrescriptionPageDoc = () => {
               </div>
             );
           })
-        : null}
+        : null} */}
       <input
         type="text"
         placeholder="Give Prescription"
         onChange={handleChange}
         value={input}
       />
-      <button onClick={handleSend}>Send</button>
+      <button onClick={handleSend}>Send Prescription</button>
     </>
   );
 };
