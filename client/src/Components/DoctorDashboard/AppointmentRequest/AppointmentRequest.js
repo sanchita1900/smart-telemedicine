@@ -19,7 +19,7 @@ const AppointmentRequest = () => {
   return (
     <>
       <DoctorNavbar />
-      <h1 style={}>Appointment Requests</h1>
+      <h1>Appointment Requests</h1>
       <PatientCardList patients={patients} />
     </>
   );

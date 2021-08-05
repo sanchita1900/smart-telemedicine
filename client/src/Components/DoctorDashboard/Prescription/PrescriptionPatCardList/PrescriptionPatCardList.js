@@ -1,5 +1,6 @@
 import React from "react";
 import PrescriptionPatCard from "../PrescriptionPatCard/PrescriptionPatCard";
+import "./PrescriptionPatCardList.css";
 
 const PrescriptionPatCardList = ({ appointments, button }) => {
   return (
