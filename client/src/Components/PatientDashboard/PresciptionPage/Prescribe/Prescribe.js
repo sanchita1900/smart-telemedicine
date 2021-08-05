@@ -31,7 +31,7 @@ const Prescribe = () => {
     <>
       <PatientNavbar />
       <ChatBox />
-      {message.length
+      {/* {message.length
         ? message.map((msg, i) => {
             return (
               <div key={i}>
@@ -39,7 +39,7 @@ const Prescribe = () => {
               </div>
             );
           })
-        : null}
+        : null} */}
       <input
         type="text"
         placeholder="Send Problem"
