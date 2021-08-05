@@ -132,3 +132,26 @@ exports.sendPrescription = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.checkRequest = async (req, res, next) => {
+  const id = req.decodedToken.id;
+  try {
+    const doctor = await Doctor.findById(id);
+    let videoArr = doctor.videoRequest;
+    console.log(videoArr);
+    var arr = [];
+    for (let i = 0; i < videoArr.length; i++) {
+      const patient = await Patient.findById(videoArr[i].patientId);
+      const obj = {
+        patient: patient,
+        date: videoArr[i].date,
+      };
+      arr.push(obj);
+    }
+    console.log(arr);
+    res.status(200).json({ message: "success", arr: arr });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};

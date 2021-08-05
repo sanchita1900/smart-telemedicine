@@ -167,11 +167,11 @@ input {
   left: 50%;
   transform: translate(-50%, 5%);
   padding: 30px;
-  background: #C5D0E7;
+  background: #c5d0e7;
 }
 
 /* Full-width input fields */
-.input{
+.input {
   width: 70%;
   padding: 10px;
   margin: 5px 0 22px 0;
@@ -180,13 +180,13 @@ input {
   color: black;
   border: none;
   border-bottom: 2px solid;
-  border-color: rgba(0,0,0,0.45);
+  border-color: rgba(0, 0, 0, 0.45);
 }
 
-.input:focus{
+.input:focus {
   outline: none;
   border: none;
-  box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.75);
 }
 
 /* Overwrite default styles of hr */
@@ -212,22 +212,22 @@ input {
 
 /* Add a blue text color to links */
 
-.form{
+.form {
   width: 35vw;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  box-shadow: 3px 3px 5px 3px rgba(0,0,0,0.25);
+  box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.25);
 }
-.welcome{
+.welcome {
   margin-bottom: 1rem;
   letter-spacing: 0.2rem;
-  background-color: #C5D0E7;
+  background-color: #c5d0e7;
 }
-.container{
+.container {
   width: inherit;
 }
-.inputFields{
+.inputFields {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -235,23 +235,24 @@ input {
   margin-top: -1em;
   width: inherit;
 }
-.create{
+.create {
   letter-spacing: 0.1rem;
   margin-top: 1.5em;
   margin-bottom: 1rem;
 }
-.page{
-  background-color: #C5D0E7;
+.page {
+  background-color: #c5d0e7;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 .redirect {
-  color: rgba(0,0,0,0.45);
+  color: rgba(0, 0, 0, 0.45);
   padding-bottom: 2rem;
 }
-.redirectButton{
+.redirectButton {
   background-color: #073042;
   color: white;
   padding: 10px 25px;
@@ -262,9 +263,12 @@ input {
   width: 8rem;
   opacity: 0.9;
 }
-.redir{
-  color: rgba(94, 157, 161, 0.938)
+.redir {
+  color: rgba(94, 157, 161, 0.938);
 }
-.redir:hover{
+.redir:hover {
   color: #073042;
+}
+.signin {
+  letter-spacing: 0.2rem;
 }

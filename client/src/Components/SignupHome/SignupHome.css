@@ -24,7 +24,7 @@
   text-decoration: none;
   /* font-size: 4rem; */
   position: absolute;
-  top: 9%;
+  top: 7%;
   left: 70%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -63,19 +63,18 @@
 .Home .btn-2:hover {
   background-color: rgba(94, 157, 161, 0.938);
 }
-.bgImage{
+.bgImage {
   width: 90vw;
   height: 80vh;
 }
-.pageFile{
+.pageFile {
   overflow-y: hidden;
   max-height: 100vh;
 }
-.buttons{
+.buttons {
   display: flex;
   flex-direction: column;
 }
-.pTag{
+.pTag {
   margin-top: -0.7rem;
 }
-

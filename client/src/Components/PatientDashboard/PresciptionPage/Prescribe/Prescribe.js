@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PatientNavbar from "../../../PatientDashboard/PatientNavbar/PatientNavbar";
 import { listMessageApi, sendProblemApi } from "../../../../api";
+import ChatBox from "../../../ChatBox/ChatBox";
 
 const Prescribe = () => {
   const [message, setMessages] = useState([]);
@@ -29,6 +30,7 @@ const Prescribe = () => {
   return (
     <>
       <PatientNavbar />
+      <ChatBox />
       {message.length
         ? message.map((msg, i) => {
             return (

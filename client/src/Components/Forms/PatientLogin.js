@@ -49,7 +49,7 @@ const PatientLogin = () => {
       <div className="main-container">
         <div className="Home">
           <div className="form">
-            <h1 className="signin">LOGIN AS PATIENT</h1>
+            <h1 className="signin">Login as Patient</h1>
             <div className="container">
               <form className="inputFields">
                 <input
@@ -79,10 +79,12 @@ const PatientLogin = () => {
             <div className="redirect">
               <p className="text">Don't have an account ? Signup Here!</p>
               {/* <Link to="/patientsignup"> */}
-                {/* <button className="signup" type="submit">
+              {/* <button className="signup" type="submit">
                   SIGN UP
                 </button> */}
-                <a href="/patientsignup" className="redir">Signup</a>
+              <a href="/patientsignup" className="redir">
+                Signup
+              </a>
               {/* </Link> */}
             </div>
           </div>

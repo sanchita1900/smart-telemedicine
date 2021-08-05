@@ -1,0 +1,26 @@
+.chat_box {
+  width: 100%;
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+.message {
+  width: 100%;
+  display: flex;
+  margin: 10px 0;
+}
+
+.message span {
+  padding: 15px;
+  background: red;
+  border-radius: 10px;
+  color: white;
+}
+
+.message.doctor {
+  justify-content: flex-end;
+}
+
+.message.doctor span {
+  background: blue;
+}

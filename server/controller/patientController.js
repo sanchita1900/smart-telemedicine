@@ -85,6 +85,7 @@ exports.sendRequest = async (req, res, next) => {
       patient.request.push(docId);
       await patient.save();
       doctor.invitation.push(patientId);
+      console.log(doctor.invitation);
       await doctor.save();
       return res.status(200).json({ message: "success" });
     }
@@ -156,6 +157,25 @@ exports.sendProblem = async (req, res, next) => {
     });
     console.log(relation);
     res.status(200).json({ message: "success", relation: relation });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
+exports.sendVideoRequest = async (req, res, next) => {
+  const docId = req.params.id;
+  const patId = req.decodedToken.userId;
+  try {
+    const doctor = await Doctor.findById(docId);
+    const date = new Date();
+    const obj = {
+      patientId: patId,
+      date: date.toDateString(),
+    };
+    doctor.videoRequest.push(obj);
+    await doctor.save();
+    res.status(200).json({ message: "success" });
   } catch (err) {
     console.log(err);
     next(err);

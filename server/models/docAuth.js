@@ -1,66 +1,75 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const patient = require('./patientAuth');
+const patient = require("./patientAuth");
 
-const docSchema = new Schema({
-    email:{
-        type: String,
-        required: true
+const docSchema = new Schema(
+  {
+    email: {
+      type: String,
+      required: true,
     },
-    password:{
-        type: String,
-        required: true
+    password: {
+      type: String,
+      required: true,
     },
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
-    state:{
-        type: String
+    state: {
+      type: String,
     },
-    city:{
-        type: String
+    city: {
+      type: String,
     },
-    gender:{
-        type: String
+    gender: {
+      type: String,
     },
-    age:{
-        type: Number
+    age: {
+      type: Number,
     },
-    contact:{
-        type: Number
+    contact: {
+      type: Number,
     },
 
     university: {
-        type: String
+      type: String,
     },
     specialization: {
-        type: String
+      type: String,
     },
     honors: {
-        type: String
+      type: String,
     },
-    ratings:{
-        type: Number
+    ratings: {
+      type: Number,
     },
     yearOfExp: {
-        type: Number
+      type: Number,
     },
     about: {
-        type: String
+      type: String,
     },
-    invitation: [{
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: patient
-    }]
-    ,
-    appointment:{
-        type: Array
+    invitation: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: patient,
+      },
+    ],
+    appointment: {
+      type: Array,
     },
-    prescription : [{
+    prescription: [
+      {
         patId: mongoose.Schema.Types.ObjectId,
-        messages : String,
-    }],
-}, {timestamps: true});
+        messages: String,
+      },
+    ],
+    videoRequest: {
+      type: Array,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('doctor', docSchema);
+module.exports = mongoose.model("doctor", docSchema);

@@ -18,7 +18,7 @@ exports.listMessages = async (req, res, next) => {
       req.decodedToken.type === "doctor"
         ? req.decodedToken.userId
         : req.query.id,
-  });
-  console.log("hello");
+  }).sort({ createdAt: -1 });
+  console.log(relation);
   res.status(200).json({ message: "success", relation: relation });
 };
