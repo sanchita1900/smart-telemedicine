@@ -48,7 +48,7 @@ const PatientLogin = () => {
       <HomeNavbar />
       <div className="main-container">
         <div className="Home">
-          <div className="form">
+          <div className="forms">
             <h1 className="signin">Login as Patient</h1>
             <div className="container">
               <form className="inputFields">

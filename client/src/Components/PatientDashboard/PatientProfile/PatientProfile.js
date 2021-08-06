@@ -48,122 +48,126 @@ const PatientProfile = () => {
   return (
     <>
       <PateintNavbar />
-      <div className="main">
+      <div className="patientProfileContainer">
         <div className="outer-box">
-          <div>
+          <div className="heading">
             <h1>YOUR PROFILE</h1>
           </div>
-          <form onSubmit={saveProfile}>
-            <label>Name</label>
-            <input
-              className="input"
-              type="string"
-              name="name"
-              value={formData.name}
-              disabled={true}
-            />
-            <label>Email</label>
-            <input
-              className="input"
-              type="string"
-              name="email"
-              value={formData.email}
-              disabled={true}
-            />
-            <label>State</label>
-            <input
-              className="input"
-              type="string"
-              name="state"
-              value={formData.state}
-              placeholder="State"
-              onChange={updateInput}
-            />
-            <label>City</label>
-            <input
-              className="input"
-              type="string"
-              name="city"
-              value={formData.city}
-              placeholder="City"
-              onChange={updateInput}
-            />
-            <label>Gender</label>
-            <input
-              className="input"
-              type="string"
-              name="gender"
-              value={formData.gender}
-              placeholder="Gender"
-              onChange={updateInput}
-            />
-            <label>Age</label>
-            <input
-              className="input"
-              type="int"
-              name="age"
-              value={formData.age}
-              placeholder="Age"
-              onChange={updateInput}
-            />
-            <label>Contact</label>
-            <input
-              className="input"
-              type="int"
-              name="contact"
-              value={formData.contact}
-              placeholder="Contact"
-              onChange={updateInput}
-            />
-            <label>Weight</label>
-            <input
-              className="input"
-              type="int"
-              name="weight"
-              value={formData.weight}
-              placeholder="Weight"
-              onChange={updateInput}
-            />
-            <label>Height</label>
-            <input
-              className="input"
-              type="int"
-              name="height"
-              value={formData.height}
-              placeholder="Height"
-              onChange={updateInput}
-            />
-            <br />
-            <label>Disease</label>
-            <input
-              className="input"
-              type="text"
-              name="disease"
-              value={formData.disease}
-              placeholder="Disease"
-              onChange={updateInput}
-            />
-            <label>Medicine</label>
-            <input
-              className="input"
-              type="text"
-              name="medicine"
-              value={formData.medicine}
-              placeholder="Medicine"
-              onChange={updateInput}
-            />
-            <label>About</label>
-            <input
-              className="input"
-              type="text"
-              name="about"
-              value={formData.about}
-              placeholder="About"
-              onChange={updateInput}
-            />
-            <button className="button" type="submit">
-              Save
-            </button>
+          <form onSubmit={saveProfile} className="patientProfile">
+            <div className="patientProfileInnerForm">
+              <label>Name</label>
+              <input
+                className="input profileInput"
+                type="string"
+                name="name"
+                value={formData.name}
+                disabled={true}
+              />
+              <label>Email</label>
+              <input
+                className="input profileInput"
+                type="string"
+                name="email"
+                value={formData.email}
+                disabled={true}
+              />
+              <label>State</label>
+              <input
+                className="input profileInput"
+                type="string"
+                name="state"
+                value={formData.state}
+                placeholder="State"
+                onChange={updateInput}
+              />
+              <label>City</label>
+              <input
+                className="input profileInput"
+                type="string"
+                name="city"
+                value={formData.city}
+                placeholder="City"
+                onChange={updateInput}
+              />
+              <label>Gender</label>
+              <input
+                className="input profileInput"
+                type="string"
+                name="gender"
+                value={formData.gender}
+                placeholder="Gender"
+                onChange={updateInput}
+              />
+              <label>Age</label>
+              <input
+                className="input profileInput"
+                type="int"
+                name="age"
+                value={formData.age}
+                placeholder="Age"
+                onChange={updateInput}
+              />
+              <label>Contact</label>
+              <input
+                className="input profileInput"
+                type="int"
+                name="contact"
+                value={formData.contact}
+                placeholder="Contact"
+                onChange={updateInput}
+              />
+              <label>Weight</label>
+              <input
+                className="input profileInput"
+                type="int"
+                name="weight"
+                value={formData.weight}
+                placeholder="Weight"
+                onChange={updateInput}
+              />
+              <label>Height</label>
+              <input
+                className="input profileInput"
+                type="int"
+                name="height"
+                value={formData.height}
+                placeholder="Height"
+                onChange={updateInput}
+              />
+              <br />
+              <label>Disease</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="disease"
+                value={formData.disease}
+                placeholder="Disease"
+                onChange={updateInput}
+              />
+              <label>Medicine</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="medicine"
+                value={formData.medicine}
+                placeholder="Medicine"
+                onChange={updateInput}
+              />
+              <label>About</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="about"
+                value={formData.about}
+                placeholder="About"
+                onChange={updateInput}
+              />
+              <div className="patientProfileButton">
+                <button className="button patientProfileSave" type="submit">
+                  Save
+                </button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
