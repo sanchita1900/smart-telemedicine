@@ -7,6 +7,7 @@ const PrescriptionDocCardList = ({ doctors }) => {
       <div className="cardList-container">
         {doctors.map((doctor) => (
           <PrescriptionDocCard
+            key={doctor._id}
             id={doctor._id}
             name={doctor.name}
             email={doctor.email}
