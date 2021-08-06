@@ -78,10 +78,12 @@ const DocLogin = () => {
             <div className="redirect">
               <p className="text">Don't have an account ? Signup Here!</p>
               {/* <Link to="/docsignup"> */}
-                {/* <button className="signup" type="submit" className="redirectButton">
+              {/* <button className="signup" type="submit" className="redirectButton">
                   SIGN UP
                 </button> */}
-                <a href="/docsignup" className="redir">Signup</a>
+              <a href="/docsignup" className="redir">
+                Signup
+              </a>
               {/* </Link> */}
             </div>
           </div>
