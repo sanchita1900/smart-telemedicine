@@ -4,6 +4,7 @@ import { doctorProfileApi } from "../../../api";
 import { doctorProfileUpdateApi } from "../../../api";
 import { useHistory } from "react-router-dom";
 // import { useParams } from 'react-router-dom';
+import "./DoctorProfile.css";
 
 const DoctorProfile = () => {
   const history = useHistory();
@@ -46,121 +47,129 @@ const DoctorProfile = () => {
   return (
     <>
       <DoctorNavbar />
-      <div>
-        <h1>YOUR PROFILE</h1>
+      <div className="doctorProfileContainer">
+        <div className="outer-box">
+          <div className="heading">
+            <h1>YOUR PROFILE</h1>
+          </div>
+          <form onSubmit={saveProfile} className="doctorProfileForm">
+            <div className="doctorProfileInnerForm">
+              <label>Name</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="name"
+                value={formData.name}
+                disabled={true}
+              />
+              <label>Email</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="email"
+                value={formData.email}
+                disabled={true}
+              />
+              <label>State</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="state"
+                value={formData.state}
+                placeholder="State"
+                onChange={updateInput}
+              />
+              <label>City</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="city"
+                value={formData.city}
+                placeholder="City"
+                onChange={updateInput}
+              />
+              <label>Gender</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="gender"
+                value={formData.gender}
+                placeholder="Gender"
+                onChange={updateInput}
+              />
+              <label>Age</label>
+              <input
+                className="input profileInput"
+                type="int"
+                name="age"
+                value={formData.age}
+                placeholder="Age"
+                onChange={updateInput}
+              />
+              <label>Contact</label>
+              <input
+                className="input profileInput"
+                type="int"
+                name="contact"
+                value={formData.contact}
+                placeholder="Contact"
+                onChange={updateInput}
+              />
+              <label>University</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="university"
+                value={formData.university}
+                placeholder="University"
+                onChange={updateInput}
+              />
+              <label>Specialization</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="specialization"
+                value={formData.specialization}
+                placeholder="Specialization"
+                onChange={updateInput}
+              />
+              <br />
+              <label>Honors</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="honors"
+                value={formData.honors}
+                placeholder="Honors"
+                onChange={updateInput}
+              />
+              <label>Years of Experience</label>
+              <input
+                className="input profileInput"
+                type="int"
+                name="yearOfExp"
+                value={formData.yearOfExp}
+                placeholder="Years of Experience"
+                onChange={updateInput}
+              />
+              <label>About</label>
+              <input
+                className="input profileInput"
+                type="text"
+                name="about"
+                value={formData.about}
+                placeholder="About"
+                onChange={updateInput}
+              />
+              <div className="doctorProfileButton">
+                <button className="button doctorProfileSave" type="submit">
+                  Save
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      <form onSubmit={saveProfile}>
-        <label>Name</label>
-        <input
-          className="input"
-          type="text"
-          name="name"
-          value={formData.name}
-          disabled={true}
-        />
-        <label>Email</label>
-        <input
-          className="input"
-          type="text"
-          name="email"
-          value={formData.email}
-          disabled={true}
-        />
-        <label>State</label>
-        <input
-          className="input"
-          type="text"
-          name="state"
-          value={formData.state}
-          placeholder="State"
-          onChange={updateInput}
-        />
-        <label>City</label>
-        <input
-          className="input"
-          type="text"
-          name="city"
-          value={formData.city}
-          placeholder="City"
-          onChange={updateInput}
-        />
-        <label>Gender</label>
-        <input
-          className="input"
-          type="text"
-          name="gender"
-          value={formData.gender}
-          placeholder="Gender"
-          onChange={updateInput}
-        />
-        <label>Age</label>
-        <input
-          className="input"
-          type="int"
-          name="age"
-          value={formData.age}
-          placeholder="Age"
-          onChange={updateInput}
-        />
-        <label>Contact</label>
-        <input
-          className="input"
-          type="int"
-          name="contact"
-          value={formData.contact}
-          placeholder="Contact"
-          onChange={updateInput}
-        />
-        <label>University</label>
-        <input
-          className="input"
-          type="text"
-          name="university"
-          value={formData.university}
-          placeholder="University"
-          onChange={updateInput}
-        />
-        <label>Specialization</label>
-        <input
-          className="input"
-          type="text"
-          name="specialization"
-          value={formData.specialization}
-          placeholder="Specialization"
-          onChange={updateInput}
-        />
-        <br />
-        <label>Honors</label>
-        <input
-          className="input"
-          type="text"
-          name="honors"
-          value={formData.honors}
-          placeholder="Honors"
-          onChange={updateInput}
-        />
-        <label>Years of Experience</label>
-        <input
-          className="input"
-          type="int"
-          name="yearOfExp"
-          value={formData.yearOfExp}
-          placeholder="Years of Experience"
-          onChange={updateInput}
-        />
-        <label>About</label>
-        <input
-          className="input"
-          type="text"
-          name="about"
-          value={formData.about}
-          placeholder="About"
-          onChange={updateInput}
-        />
-        <button className="button" type="submit">
-          Save
-        </button>
-      </form>
     </>
   );
 };
