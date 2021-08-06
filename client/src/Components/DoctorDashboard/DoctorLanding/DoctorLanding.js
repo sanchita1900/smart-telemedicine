@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import DoctorNavbar from "../DoctorNavbar/DoctorNavbar";
 import PrescriptionPatCardList from "../Prescription/PrescriptionPatCardList/PrescriptionPatCardList";
 import { getPatientsApi } from "../../../api";
+import "./DoctorLanding.css";
 
 const DoctorLanding = () => {
   const [landing, setLanding] = useState(true);
@@ -19,8 +20,10 @@ const DoctorLanding = () => {
   return (
     <div>
       <DoctorNavbar />
-      <h1>Patients under Monitor</h1>
-      <PrescriptionPatCardList appointments={appointments} button={false} />
+      <div className="Doctor-landing-container">
+        <h1>Upcoming Appointments</h1>
+        <PrescriptionPatCardList appointments={appointments} button={false} />
+      </div>
     </div>
   );
 };

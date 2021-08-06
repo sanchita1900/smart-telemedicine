@@ -1,56 +1,55 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const doctor = require("./docAuth");
 
-const patientSchema = new Schema({
-    email:{
-        type: String,
-        required: true
+const patientSchema = new Schema(
+  {
+    email: {
+      type: String,
+      required: true,
     },
-    password:{
-        type: String,
-        required: true
+    password: {
+      type: String,
+      required: true,
     },
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
-    state:{
-        type: String
+    state: {
+      type: String,
     },
-    city:{
-        type: String
+    city: {
+      type: String,
     },
-    gender:{
-        type: String
+    gender: {
+      type: String,
     },
-    age:{
-        type: Number
+    age: {
+      type: Number,
     },
-    contact:{
-        type: Number
+    contact: {
+      type: Number,
     },
-    weight:{
-        type: Number
+    weight: {
+      type: Number,
     },
-    height:{
-        type: Number
+    height: {
+      type: Number,
     },
     disease: {
-        type: String
+      type: String,
     },
     medicine: {
-        type: Array
+      type: Array,
     },
     about: {
-        type: String
+      type: String,
     },
-    request:{
-        type: Array
-    },
-    appointedDocs:{
-        type: Array
-    }
-   
-},{timestamps: true});
+    request: [{ type: mongoose.Schema.Types.ObjectId, ref: "doctor" }],
+    appointedDocs: [{ type: mongoose.Schema.Types.ObjectId, ref: "doctor" }],
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('patient', patientSchema);
+module.exports = mongoose.model("patient", patientSchema);

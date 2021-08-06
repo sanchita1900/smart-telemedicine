@@ -1,6 +1,7 @@
 const Patient = require("../models/patientAuth");
 const Doctor = require("../models/docAuth");
 const Relation = require("../models/relation");
+const mongoose = require("mongoose");
 
 exports.getProfile = async (req, res) => {
   // const id = req.params.userId;
@@ -79,15 +80,17 @@ exports.confirmInvitation = async (req, res, next) => {
     const doctor = await Doctor.findById(docId);
     const patient = await Patient.findById(patId);
     if (
-      doctor.appointment.find((x) => x === patId) ||
-      patient.appointedDocs.find((x) => x === docId)
+      doctor.appointment.find((x) => x.toString() === patId) ||
+      patient.appointedDocs.find((x) => x.toString() === docId)
     ) {
       return res.status(400).json({ message: "already appointed" });
     } else {
-      doctor.appointment.push(patId);
-      doctor.invitation.pop(patId);
+      doctor.appointment.push(mongoose.Types.ObjectId(patId));
+      doctor.invitation = doctor.invitation.filter(
+        (p) => p.toString() !== patId
+      );
       await doctor.save();
-      patient.appointedDocs.push(docId);
+      patient.appointedDocs.push(mongoose.Types.ObjectId(docId));
       await patient.save();
       console.log(patient);
       return res.status(200).json({ message: "success" });
@@ -121,8 +124,8 @@ exports.sendPrescription = async (req, res, next) => {
     const patId = req.body.userId;
     const docId = req.decodedToken.userId;
     const relation = await Relation.create({
-      patientId: patId,
-      doctorId: docId,
+      patientId: mongoose.Types.ObjectId(patId),
+      doctorId: mongoose.Types.ObjectId(docId),
       message: req.body.message,
       sender: "doctor",
     });

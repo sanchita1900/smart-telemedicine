@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./PrescriptionPatCard.css";
 
 const PrescriptionPatCard = (props) => {
+  const history = useHistory();
   useEffect(() => {
     console.log(props);
   }, []);
+
+  const handlePrescribe = () => {
+    history.push(`/doctor/chat/${props.id}`);
+  };
   return (
     <>
       <div className="mainPatientCardContainer">
@@ -28,11 +33,9 @@ const PrescriptionPatCard = (props) => {
             Age: <span>{props.age}</span>
           </p>
           {props.button ? (
-            <Link to={`/doctor/chat/${props.id}`}>
-              <div className="acceptButton">
-                <button>Prescribe</button>
-              </div>
-            </Link>
+            <div className="acceptButton">
+              <button onClick={handlePrescribe}>Prescribe</button>
+            </div>
           ) : (
             <></>
           )}

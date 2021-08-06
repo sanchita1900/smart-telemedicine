@@ -1,0 +1,10 @@
+.Doctor-landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Doctor-landing-container h1 {
+  font-weight: 700px;
+}

@@ -53,15 +53,21 @@ const docSchema = new Schema(
     invitation: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: patient,
+        ref: "patient",
       },
     ],
-    appointment: {
-      type: Array,
-    },
+    appointment: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "patient",
+      },
+    ],
     prescription: [
       {
-        patId: mongoose.Schema.Types.ObjectId,
+        patId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "patient",
+        },
         messages: String,
       },
     ],

@@ -3,6 +3,7 @@ const Doctor = require("../models/docAuth");
 const Relation = require("../models/relation");
 const Problem = require("../models/problem");
 const { response } = require("express");
+const mongoose = require("mongoose");
 
 exports.getProfile = async (req, res) => {
   // const id = req.params.userId;
@@ -77,15 +78,15 @@ exports.sendRequest = async (req, res, next) => {
     console.log(doctor);
     const patient = await Patient.findById(patientId);
     if (
-      patient.request.find((x) => x === docId) ||
-      doctor.invitation.find((x) => x === patientId)
+      patient.request.find((x) => x.toString() === docId) ||
+      doctor.invitation.find((x) => x.toString() === patientId)
     ) {
       return res.status(400).json({ message: "request already sent" });
     } else {
-      patient.request.push(docId);
+      patient.request.push(mongoose.Types.ObjectId(docId));
       await patient.save();
-      doctor.invitation.push(patientId);
-      console.log(doctor.invitation);
+      doctor.invitation.push(mongoose.Types.ObjectId(patientId));
+      console.log("hello", doctor.invitation);
       await doctor.save();
       return res.status(200).json({ message: "success" });
     }
@@ -104,16 +105,22 @@ exports.cancelRequest = async (req, res, next) => {
     const patient = await Patient.findById(patientId);
     console.log(patient);
     if (
-      (patient.request.find((x) => x === docId) &&
-        doctor.invitation.find((x) => x == patientId)) ||
-      (patient.appointedDocs.find((x) => x === docId) &&
-        doctor.appointment.find((x) => x === patientId))
+      (patient.request.find((x) => x.toString() === docId) &&
+        doctor.invitation.find((x) => x.toString() == patientId)) ||
+      (patient.appointedDocs.find((x) => x.toString() === docId) &&
+        doctor.appointment.find((x) => x.toString() === patientId))
     ) {
-      patient.request.pop(docId);
-      patient.appointedDocs.pop(docId);
+      patient.request = patient.request.filter((p) => p.toString() !== docId);
+      patient.appointedDocs = patient.appointedDocs.filter(
+        (p) => p.toString() !== docId
+      );
       await patient.save();
-      doctor.invitation.pop(patientId);
-      doctor.appointment.pop(patientId);
+      doctor.invitation = doctor.invitation.filter(
+        (p) => p.toString() !== patId
+      );
+      doctor.appointment = doctor.invitation.filter(
+        (p) => p.toString() !== patId
+      );
       await doctor.save();
       console.log(patient.request);
       return res.status(200).json({ message: "success" });
@@ -150,8 +157,8 @@ exports.sendProblem = async (req, res, next) => {
     const patId = req.decodedToken.userId;
     console.log(patId);
     const relation = await Relation.create({
-      patientId: patId,
-      doctorId: docId,
+      patientId: mongoose.Types.ObjectId(patId),
+      doctorId: mongoose.Types.ObjectId(docId),
       message: req.body.message,
       sender: "patient",
     });
