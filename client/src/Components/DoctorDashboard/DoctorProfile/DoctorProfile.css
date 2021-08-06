@@ -1,0 +1,36 @@
+.doctorProfileContainer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background: #d0cdf0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.doctorProfile {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+}
+.doctorProfileInnerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35rem;
+  margin-left: 10rem;
+}
+.doctorProfileSave {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.doctorProfileButton {
+  display: flex;
+  justify-content: center;
+  margin-left: -8rem;
+}
