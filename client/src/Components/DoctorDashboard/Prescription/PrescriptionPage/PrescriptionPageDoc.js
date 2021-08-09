@@ -31,8 +31,12 @@ const PrescriptionPageDoc = () => {
   return (
     <>
       <DoctorNavbar />
-      <ChatBox />
-      {/* {message.length
+      <div className="chatboxmain-container">
+        <div className="chatbox-container">
+          <div className="chat">
+            <ChatBox />
+          </div>
+          {/* {message.length
         ? message.map((msg, i) => {
             return (
               <div key={i}>
@@ -41,13 +45,17 @@ const PrescriptionPageDoc = () => {
             );
           })
         : null} */}
-      <input
-        type="text"
-        placeholder="Give Prescription"
-        onChange={handleChange}
-        value={input}
-      />
-      <button onClick={handleSend}>Send Prescription</button>
+          <div className="chatinput">
+            <input
+              type="text"
+              placeholder="Give Prescription"
+              onChange={handleChange}
+              value={input}
+            />
+            <button onClick={handleSend}>Send Prescription</button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

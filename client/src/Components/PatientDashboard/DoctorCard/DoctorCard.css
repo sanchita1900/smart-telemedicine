@@ -49,18 +49,14 @@
   border: none;
   padding: 10px 5px;
 }
-.Card .btn2:disabled{
-opacity: 0.5;
-cursor: not-allowed;
+.Card .btn2:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 .cardTitle {
-  font-size: 2rem;
- 
-  font-weight: 4px;
   padding: 5px;
-
 }
-.cardtitle{
+.cardtitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +67,6 @@ cursor: not-allowed;
 .email {
   padding: 5px;
   font-size: 1rem;
-  
 }
 .speciality {
   /* font-size: 1.5rem; */
@@ -88,8 +83,27 @@ cursor: not-allowed;
   width: 80%;
 }
 
-.speciality p{
+.speciality p {
   font-size: 1.2rem;
   font-weight: 800;
   color: #ce5e6f;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+.image-container img {
+  height: 20vh;
+  width: 25vw;
+}
+
+.honors,
+.exp {
+  font-size: 1rem;
+  margin-top: 10px;
 }

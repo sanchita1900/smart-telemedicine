@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PrescriptionDocCard from "../PrescriptionDocCard/PrescriptionDocCard";
 
 const PrescriptionDocCardList = ({ doctors }) => {
+  useEffect(() => {
+    console.log(doctors);
+  }, []);
   return (
     <>
       <div className="cardList-container">
@@ -12,6 +15,7 @@ const PrescriptionDocCardList = ({ doctors }) => {
             name={doctor.name}
             email={doctor.email}
             gender={doctor.gender}
+            speciality={doctor.specialization}
           />
         ))}
       </div>

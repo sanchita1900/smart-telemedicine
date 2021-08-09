@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import PatientNavbar from "../../../PatientDashboard/PatientNavbar/PatientNavbar";
 import { listMessageApi, sendProblemApi } from "../../../../api";
 import ChatBox from "../../../ChatBox/ChatBox";
+import "./Prescribe.css";
 
 const Prescribe = () => {
   const [message, setMessages] = useState([]);
@@ -31,8 +32,13 @@ const Prescribe = () => {
   return (
     <>
       <PatientNavbar />
-      <ChatBox />
-      {/* {message.length
+      <div className="chatboxmain-container">
+        <div className="chatbox-container">
+          <div className="chat">
+            <ChatBox />
+          </div>
+
+          {/* {message.length
         ? message.map((msg, i) => {
             return (
               <div key={i}>
@@ -41,13 +47,17 @@ const Prescribe = () => {
             );
           })
         : null} */}
-      <input
-        type="text"
-        placeholder="Send Problem"
-        onChange={handleChange}
-        value={input}
-      />
-      <button onClick={handleSend}>Send Problem</button>
+          <div className="chatinput">
+            <input
+              type="text"
+              placeholder="Send Problem"
+              onChange={handleChange}
+              value={input}
+            />
+            <button onClick={handleSend}>Send Problem</button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

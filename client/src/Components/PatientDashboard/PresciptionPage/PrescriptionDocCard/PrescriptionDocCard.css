@@ -1,0 +1,33 @@
+.mainPrescriptionCardContainer {
+  display: flex;
+  background-color: #b6c2ce;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.3);
+
+  height: auto;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  width: 400px;
+}
+
+.sendButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sendButton button {
+  margin-top: 1.2rem;
+  width: 40%;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: rgb(231, 17, 28);
+  color: white;
+  border: none;
+  padding: 10px 5px;
+}
+.PrescriptionCard {
+  width: 100%;
+}

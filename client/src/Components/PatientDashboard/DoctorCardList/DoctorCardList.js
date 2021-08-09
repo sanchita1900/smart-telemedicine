@@ -18,6 +18,8 @@ const DoctorCardlist = ({ doctors }) => {
             specialization={doctor.specialization}
             invitation={doctor.invitation}
             appointment={doctor.appointment}
+            yearOfExp={doctor.yearOfExp}
+            honors={doctor.honors}
           />
         ))}
       </div>

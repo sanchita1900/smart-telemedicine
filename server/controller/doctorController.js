@@ -80,7 +80,7 @@ exports.confirmInvitation = async (req, res, next) => {
     const doctor = await Doctor.findById(docId);
     const patient = await Patient.findById(patId);
     if (
-      doctor.appointment.find((x) => x.toString() === patId) ||
+      doctor.appointment.find((x) => x.toString() === patId) &&
       patient.appointedDocs.find((x) => x.toString() === docId)
     ) {
       return res.status(400).json({ message: "already appointed" });
